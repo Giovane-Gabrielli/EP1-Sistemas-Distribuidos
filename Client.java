@@ -1,11 +1,12 @@
 import java.net.MalformedURLException;
 import java.rmi.*;
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 public class Client {
 	private static Interfacermi look_up;
 	private static Part parteatual;
 	public static void main(String[] args) throws MalformedURLException, RemoteException, NotBoundException {
-		//boolean continuar;
+	boolean continuar = true;
 		do{
 			Scanner reader = new Scanner(System.in);  // Reading from System.in
 			System.out.println("Enter a number: ");
@@ -40,51 +41,38 @@ public class Client {
 				}
 				break;
 			case 4:
-				
-				
-			}
+				System.out.println("Deseja adicionar parte atual?");
+				String lel = reader.nextLine();
+				switch(lel){
+				case "s":
+					look_up.addPart(parteatual);
+					System.out.println("Parte adicionada");
+					break;
+				default:
+					System.out.println("Parte nao adicionada");
+					break;
+					
+				}
+				break;
+			case 5:
+				String codigopeçanova = Integer.toString(ThreadLocalRandom.current().nextInt());
+				System.out.println("nome da parte?");
+				String nomepeçanova = reader.nextLine();
+				System.out.println("descricao?");
+				String novadescricao = reader.nextLine();
+				parteatual = new Part(codigopeçanova,nomepeçanova,novadescricao);
+				System.out.println("Parte atual atualizada");
+				break;
+			case 6:
+				System.out.println("A parte atual e " + parteatual.toString());
+				break;
 			
-		}
-	        /*do {
-
-	            String[] options = {"Show All", "Find a book", "Exit"};
-
-	            int choice = JOptionPane.showOptionDialog(null, "Choose an action", "Option dialog",
-	                    JOptionPane.DEFAULT_OPTION,
-	                    JOptionPane.INFORMATION_MESSAGE,
-	                    null, options, options[0]);
-
-	            switch (choice) {
-
-	                case 0:
-	                    List<Book> list = look_up.allBooks();
-	                    StringBuilder message = new StringBuilder();
-	                    list.forEach(x -> {
-	                        message.append(x.toString() + "\n");
-	                    });
-	                    JOptionPane.showMessageDialog(null, new String(message));
-	                    break;
-	                case 1:
-	                    String isbn = JOptionPane.showInputDialog("Type the isbn of the book you want to find.");
-	                    try {
-	                        Book response = look_up.findBook(new Book(isbn));
-	                        JOptionPane.showMessageDialog(null, "Title: " +
-	                                        response.getTitle() + "\n" + "Cost: $" +
-	                                        response.getCost(),
-	                                response.getIsbn(), JOptionPane.INFORMATION_MESSAGE);
-	                    } catch (NoSuchElementException ex) {
-	                        JOptionPane.showMessageDialog(null, "Not found");
-	                    }
-	                    break;
-	                default:
-	                    System.exit(0);
-	                    break;
-
-	            }
-	            findmore = (JOptionPane.showConfirmDialog(null, "Do you want to exit?", "Exit",
-	                    JOptionPane.YES_NO_OPTION) == JOptionPane.NO_OPTION);
-	        } while (findmore);
-	    }*/
-	    }
+			}
+			System.out.println("Deseja continuar s ou n?");
+			String cont = reader.nextLine();
+			if (cont == "s") continuar = true;
+			else continuar = false;
+		}while(continuar);			
+	}
 }
 	    
