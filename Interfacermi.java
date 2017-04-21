@@ -3,8 +3,8 @@ import java.rmi.RemoteException;
 import java.util.List;
 
 public interface Interfacermi extends Remote {
-	Part acharPart(Integer codigo) throws RemoteException;
+	Part acharPart(Part part) throws RemoteException;
 	List<Part> todasPart() throws RemoteException;
-	Boolean addPart (Part p) throws RemoteException;
+	void addPart (Part part) throws RemoteException;
 
 }
