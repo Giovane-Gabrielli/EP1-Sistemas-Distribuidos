@@ -1,14 +1,11 @@
 //interface que representa um repositório de peças, deve extender "Remote";
-import java.rmi.Naming;
-import java.rmi.RemoteException;
+import java.rmi.*;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.function.Predicate;
 public class PartRepository extends UnicastRemoteObject implements Interfacermi {
-
-    private static final long serialVersionUID = 1L;
-    private List<Part> partList;
+	private static final long serialVersionUID = -893491036037807711L;
+	private List<Part> partList;
     protected PartRepository() throws RemoteException {
         super();
     }
