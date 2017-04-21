@@ -29,7 +29,7 @@ public class PartRepository extends UnicastRemoteObject implements Interfacermi 
 
     public static void main(String[] args) {
         try {
-            Naming.rebind("//localhost/Partrep", new PartRepository());
+            Naming.rebind(args[0], new PartRepository());
             System.err.println("Server ready");
         } catch (Exception e) {
             System.err.println("Server exception: " + e.getMessage());
