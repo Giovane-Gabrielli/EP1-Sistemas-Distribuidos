@@ -26,6 +26,9 @@ public class Part implements Serializable{
 	public String getDescricao(){
 		return this.descricao;
 	}
+	public String toString() {
+	    return "> " + this.codPeca + " " + this.nome + ": " + this.descricao;
+	}
 	
 	
 }
