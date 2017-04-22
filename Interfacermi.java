@@ -6,5 +6,4 @@ public interface Interfacermi extends Remote {
 	Part acharPart(Part part) throws RemoteException;
 	List<Part> todasPart() throws RemoteException;
 	void addPart (Part part) throws RemoteException;
-
 }

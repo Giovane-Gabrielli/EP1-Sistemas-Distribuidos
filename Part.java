@@ -1,12 +1,12 @@
 //classe abstrata Part que representa uma peça;
 import java.io.Serializable;
-import java.util.List;
+import java.util.*;
 public class Part implements Serializable{
 	private static final long serialVersionUID = -1627664726140243393L; //serial de classe gerado automaticamente pra evitar conflitos futuros
 	public String codPeca; // Código da peça, gerado automaticamente pelo sistema;	
 	public String nome; // Nome da peça;
 	public String descricao; // Descrição da peça;
-	public List<Part> subpart;
+	public List<Part> subpart = new ArrayList<>();
 	public Part(String codigo){
 		this.codPeca = codigo;
 	}

@@ -68,7 +68,15 @@ public class Client {
 			case "6":
 				System.out.println("A parte atual e " + parteatual.toString());
 				break;
-			
+			case "7":
+				String codigosubpecanova = Integer.toString(ThreadLocalRandom.current().nextInt());
+				System.out.println("nome da parte?");
+				String nomesubpecanova = reader.nextLine();
+				System.out.println("descricao?");
+				String novasubdescricao = reader.nextLine();
+				parteatual.subpart.add(new Part(codigosubpecanova,nomesubpecanova,novasubdescricao));
+				System.out.println("Sub-parte adicionada em parte atual");
+				break;
 			default:
 				break;
 			}
