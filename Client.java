@@ -71,9 +71,6 @@ public class Client {
 			
 			}
 			System.out.println("Deseja continuar s ou n?");
-			String cont = reader.nextLine();
-			if (cont == "s") continuar = true;
-			else continuar = false;
 		}while(continuar);			
 	}
 }

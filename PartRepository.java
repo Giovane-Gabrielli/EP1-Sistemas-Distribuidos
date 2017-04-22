@@ -5,7 +5,7 @@ import java.util.*;
 import java.util.function.Predicate;
 public class PartRepository extends UnicastRemoteObject implements Interfacermi {
 	private static final long serialVersionUID = -893491036037807711L;
-	private List<Part> partList;
+	public List<Part> partList = new ArrayList<>();
     protected PartRepository() throws RemoteException {
         super();
     }
