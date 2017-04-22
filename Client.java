@@ -69,8 +69,21 @@ public class Client {
 				System.out.println("A parte atual e " + parteatual.toString());
 				break;
 			
+			default:
+				break;
 			}
 			System.out.println("Deseja continuar s ou n?");
+			String cont = reader.nextLine();
+			switch(cont){
+			case "s":
+				continuar = true;
+				break;
+			default:
+				continuar = false;
+				break;
+			}
+			
+			
 		}while(continuar);			
 	}
 }
