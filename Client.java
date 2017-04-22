@@ -29,7 +29,7 @@ public class Client {
 				});
 				break;
 			case 3:
-				System.out.println("Codigo da peça desejada?");
+				System.out.println("Codigo da peÃ§a desejada?");
 				String cod = reader.nextLine();
 				try{
 					Part resposta = look_up.acharPart(new Part(cod));
@@ -55,12 +55,12 @@ public class Client {
 				}
 				break;
 			case 5:
-				String codigopeçanova = Integer.toString(ThreadLocalRandom.current().nextInt());
+				String codigopeÃ§anova = Integer.toString(ThreadLocalRandom.current().nextInt());
 				System.out.println("nome da parte?");
-				String nomepeçanova = reader.nextLine();
+				String nomepeÃ§anova = reader.nextLine();
 				System.out.println("descricao?");
 				String novadescricao = reader.nextLine();
-				parteatual = new Part(codigopeçanova,nomepeçanova,novadescricao);
+				parteatual = new Part(codigopecanova,nomepecanova,novadescricao);
 				System.out.println("Parte atual atualizada");
 				break;
 			case 6:
