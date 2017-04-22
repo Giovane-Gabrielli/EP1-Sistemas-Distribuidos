@@ -10,9 +10,9 @@ public class Client {
 		do{
 			Scanner reader = new Scanner(System.in);
 			System.out.println("1: Bindsv  2:Listarparts 3:pegarpart 4:addpart 5:Criarpart 6:partatual");
-			int n = reader.nextInt();
+			String n = reader.nextLine();
 			switch(n){
-			case 1:
+			case "1":
 				try{
 					System.out.println("Digite a url do servidor");
 					String nomeserv = reader.nextLine();
@@ -20,15 +20,16 @@ public class Client {
 				}
 				catch(MalformedURLException e){
 					System.out.println("Server invalido");
+					continue;
 				}
 				break;
-			case 2:
+			case "2":
 				List<Part> list = look_up.todasPart();
 				list.forEach(x->{
 					System.out.println(x.toString());
 				});
 				break;
-			case 3:
+			case "3":
 				System.out.println("Codigo da peca desejada?");
 				String cod = reader.nextLine();
 				try{
@@ -38,9 +39,10 @@ public class Client {
 				}
 				catch (NoSuchElementException fudeu){
 					System.out.println("Nao achei sua peca");
+					continue;
 				}
 				break;
-			case 4:
+			case "4":
 				System.out.println("Deseja adicionar parte atual?");
 				String lel = reader.nextLine();
 				switch(lel){
@@ -54,7 +56,7 @@ public class Client {
 					
 				}
 				break;
-			case 5:
+			case "5":
 				String codigopecanova = Integer.toString(ThreadLocalRandom.current().nextInt());
 				System.out.println("nome da parte?");
 				String nomepecanova = reader.nextLine();
@@ -63,7 +65,7 @@ public class Client {
 				parteatual = new Part(codigopecanova,nomepecanova,novadescricao);
 				System.out.println("Parte atual atualizada");
 				break;
-			case 6:
+			case "6":
 				System.out.println("A parte atual e " + parteatual.toString());
 				break;
 			
