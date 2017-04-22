@@ -55,9 +55,9 @@ public class Client {
 				}
 				break;
 			case 5:
-				String codigopeçanova = Integer.toString(ThreadLocalRandom.current().nextInt());
+				String codigopecanova = Integer.toString(ThreadLocalRandom.current().nextInt());
 				System.out.println("nome da parte?");
-				String nomepeçanova = reader.nextLine();
+				String nomepecanova = reader.nextLine();
 				System.out.println("descricao?");
 				String novadescricao = reader.nextLine();
 				parteatual = new Part(codigopecanova,nomepecanova,novadescricao);
