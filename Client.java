@@ -8,8 +8,8 @@ public class Client {
 	public static void main(String[] args) throws MalformedURLException, RemoteException, NotBoundException {
 	boolean continuar = true;
 		do{
-			Scanner reader = new Scanner(System.in);  // Reading from System.in
-			System.out.println("Enter a number: ");
+			Scanner reader = new Scanner(System.in);
+			System.out.println("1: Bindsv  2:Listarparts 3:pegarpart 4:addpart 5:Criarpart 6:partatual");
 			int n = reader.nextInt();
 			switch(n){
 			case 1:
