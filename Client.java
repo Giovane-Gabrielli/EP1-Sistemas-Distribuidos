@@ -29,7 +29,7 @@ public class Client {
 				});
 				break;
 			case 3:
-				System.out.println("Codigo da peça desejada?");
+				System.out.println("Codigo da peca desejada?");
 				String cod = reader.nextLine();
 				try{
 					Part resposta = look_up.acharPart(new Part(cod));
