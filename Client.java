@@ -9,9 +9,14 @@ public class Client {
 	boolean continuar = true;
 		do{
 			Scanner reader = new Scanner(System.in);
-			System.out.println("1: Bindsv  2:Listarparts 3:pegarpart 4:addpart 5:Criarpart 6:partatual");
+			System.out.println("0:listar rmiregistry em localhost 1: Bindsv  2:Listarparts 3:pegarpart 4:addpart 5:Criarpart 6:partatual 7:addsubpart 8:quit");
 			String n = reader.nextLine();
 			switch(n){
+			case "0":
+				String[] listadeserv = Naming.list("//localhost/");
+				for (String o:listadeserv){
+					System.out.println(o);
+				}
 			case "1":
 				try{
 					System.out.println("Digite a url do servidor");
@@ -77,21 +82,28 @@ public class Client {
 				parteatual.subpart.add(new Part(codigosubpecanova,nomesubpecanova,novasubdescricao));
 				System.out.println("Sub-parte adicionada em parte atual");
 				break;
+			case "8":
+				System.out.println("Deseja sair s ou n?");
+				String cont = reader.nextLine();
+				switch(cont){
+				case "s":
+					continuar = false;
+					break;
+				default:
+					continuar = true;
+					break;
+				}
+				break;
+			case "9":
+				List<Part> listasub = parteatual.subpart;
+				listasub.forEach(x->{
+					System.out.println(x.toString());
+				});
+				break;
 			default:
 				break;
-			}
-			System.out.println("Deseja continuar s ou n?");
-			String cont = reader.nextLine();
-			switch(cont){
-			case "s":
-				continuar = true;
-				break;
-			default:
-				continuar = false;
-				break;
-			}
 			
-			
+			}
 		}while(continuar);			
 	}
 }

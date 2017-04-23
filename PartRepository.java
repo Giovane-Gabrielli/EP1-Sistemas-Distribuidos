@@ -1,4 +1,3 @@
-//interface que representa um repositório de peças, deve extender "Remote";
 import java.rmi.*;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.*;
