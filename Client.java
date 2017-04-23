@@ -48,6 +48,7 @@ public class Client {
 				}
 				break;
 			case "4":
+				if(parteatual!=null){
 				System.out.println("Deseja adicionar parte atual?");
 				String lel = reader.nextLine();
 				switch(lel){
@@ -59,6 +60,10 @@ public class Client {
 					System.out.println("Parte nao adicionada");
 					break;
 					
+				}
+				}
+				else{
+					System.out.println("Crie uma part primeiro");
 				}
 				break;
 			case "5":
@@ -96,13 +101,15 @@ public class Client {
 				break;
 			case "8":
 				List<Part> listasub = parteatual.subpart;
-				listasub.forEach(x->{
-					System.out.println(x.toString());
-				});
+				if(listasub.isEmpty()) System.out.println("Peça primitiva");
+				else{
+					listasub.forEach(x->{
+						System.out.println(x.toString());
+					});
+				}
 				break;
 			default:
 				break;
-			
 			}
 		}while(continuar);			
 	}
