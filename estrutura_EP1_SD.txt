@@ -1,7 +1,0 @@
-Part (interface)		PartRepository(interface) extends remote
-
-RealPart implements Part	RealRepository implements PartRepository
-
-
-Cliente				Servidor (exporta um objeto RealRepository)
-
