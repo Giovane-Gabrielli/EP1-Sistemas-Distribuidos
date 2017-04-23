@@ -80,12 +80,12 @@ public class Client {
 				break;
 			case "7":
 				String codigosubpecanova = Integer.toString(ThreadLocalRandom.current().nextInt());
-				System.out.println("nome da parte?");
+				System.out.println("nome da subparte?");
 				String nomesubpecanova = reader.nextLine();
 				System.out.println("descricao?");
 				String novasubdescricao = reader.nextLine();
 				parteatual.subpart.add(new Part(codigosubpecanova,nomesubpecanova,novasubdescricao));
-				System.out.println("Sub-parte adicionada em parte atual");
+				System.out.println("Subparte adicionada em parte atual");
 				break;
 			case "9":
 				System.out.println("Deseja sair s ou n?");
@@ -101,7 +101,7 @@ public class Client {
 				break;
 			case "8":
 				List<Part> listasub = parteatual.subpart;
-				if(listasub.isEmpty()) System.out.println("Peça primitiva");
+				if(listasub.isEmpty()) System.out.println("Peca primitiva");
 				else{
 					listasub.forEach(x->{
 						System.out.println(x.toString());
