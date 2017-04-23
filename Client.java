@@ -9,7 +9,7 @@ public class Client {
 	boolean continuar = true;
 		do{
 			Scanner reader = new Scanner(System.in);
-			System.out.println("0:listar rmiregistry em localhost 1: Bindsv  2:Listarparts 3:pegarpart 4:addpart 5:Criarpart 6:partatual 7:addsubpart 8:quit");
+			System.out.println("0:listar rmiregistry em localhost 1: Bindsv  2:Listarparts 3:pegarpart 4:addpart 5:Criarpart 6:partatual 7:addsubpart 8:listarsubparts 9:quit");
 			String n = reader.nextLine();
 			switch(n){
 			case "0":
@@ -82,7 +82,7 @@ public class Client {
 				parteatual.subpart.add(new Part(codigosubpecanova,nomesubpecanova,novasubdescricao));
 				System.out.println("Sub-parte adicionada em parte atual");
 				break;
-			case "8":
+			case "9":
 				System.out.println("Deseja sair s ou n?");
 				String cont = reader.nextLine();
 				switch(cont){
@@ -94,7 +94,7 @@ public class Client {
 					break;
 				}
 				break;
-			case "9":
+			case "8":
 				List<Part> listasub = parteatual.subpart;
 				listasub.forEach(x->{
 					System.out.println(x.toString());
